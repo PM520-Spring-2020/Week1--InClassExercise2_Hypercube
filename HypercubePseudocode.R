@@ -1,4 +1,4 @@
-# test change to R file - added this text
+
 
 set.seed(324)  # set the seed for the random number generator to any number you like
 NumberOfTrials<-500   # How many trials we will perform
