@@ -1,0 +1,68 @@
+---
+title: "Hypercubes"
+author: "Paul M"
+date: "12/3/2020"
+output: html_document
+---
+
+Here you are asked to consider the following situation:
+
+Consider n-dimensional unit ‘cubes’:
+
+* n=1 -> line. Coordinates= (x1) [or (x)].
+* n=2 -> a square. Coordinates= (x1,x2) [or (x,y)]. 
+* n=3 -> a cube. Coordinates= (x1,x2,x3) [or (x,y,z)]. 
+* n=4 -> 4-dimensional hypercube. Coordinates= (x1,x2,x3,x4). 
+* n=5 -> 5-dimensional hypercube. Coordinates= (x1,x2,x3,x4,x5). 
+* n=N -> N-dimensional hypercube. Coordinates= (x1,x2,x3,x4,…,xN).
+
+Let’s suppose that all are unit cubes, so 0 ≤ xi ≤ 1, for all i.
+
+You are asked to address the following questions:
+
+#### Question 1: 
+If we sample a point uniformly at random from inside a hypercube, what is the probability that the point is within a distance of 0.1 of the surface?
+
+#### Question 2: 
+How can you use your answer to question 1 to find the what proportion of the volume of an n-dimensional hypercube that is within a distance of 0.1 of the surface?
+
+---
+
+Pseudocode for this problem can be found below.
+
+
+First, set-up some global variables:
+```{r}
+set.seed(324)  # set the seed for the random number generator to any number you like
+NumberOfTrials<-500   # How many trials we will perform
+TotalCountNearSurface<-numeric()    # a vector that records how many were close to the surface for each dimension
+MaxNumberOfDimensions<-10  # we will go up to this many dimensions
+```
+
+
+Set up a loop to run through the different dimensions, and then for each dimension simulate the procxess of picking a random point. As you do that, keep track of how many fall close to the edge.
+
+```{r}
+HowManyCloseToSurface<-0 # A variable to record how often the point is close to the surface in a given dimension
+for (j in 1:MaxNumberOfDimensions) {
+  HowManyCloseToSurface<-0   # reset your counter
+  for (i in 1:NumberOfTrials) {
+    
+    # add code to pick a point at random in the cube
+
+    # check whether the point is within 0.1 of the surface (how do you check this?)
+    # if it is, increase the value of HowManyCloseToSurface by 1
+    
+    # record the value of HowManyCloseToSurface, this will be your estimate of the prob. of being close to surface
+    # store it in a vector (say), so that you can keep track of the number you got for each dimension
+  }  
+  
+  # output the proportion of the volume of the cube that is within 0.1 of the surface
+  
+}
+```
+
+Now plot your estimates of the proportion of the volume that is within 0.1 of the surface (on the y axis)
+against the number of dimensions the hypercube has (on the x-axis) and answer thew earlier questions.
+
+##### Extra question. What do you notice about this proportion as N increases? What value do you think it takes for very large N?
