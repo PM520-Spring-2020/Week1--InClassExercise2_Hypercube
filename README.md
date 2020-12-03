@@ -20,4 +20,4 @@ what is the probability that the point is within a distance of 0.1 of the surfac
 Question 2: How can you use your answeer to question 1 to find the what proportion of 
 the volume of an n-dimensional hypercube that is within a distance of 0.1 of the surface?
 
-Pseudocode for this problem can be found in the HypercubePseudocode.R file in this repository.
+Pseudocode for this problem can be found in the HypercubePseudocode.Rmd file in this repository.
